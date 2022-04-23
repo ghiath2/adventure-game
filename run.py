@@ -32,8 +32,7 @@ class Game:
         time.sleep(delay)
 
 
-health = 100
-medkit = False
+player = {"location":"", "health":100, "items":[]}
 
 
 def entry():
