@@ -32,7 +32,16 @@ class Game:
         time.sleep(delay)
 
 def entry():
-    pass
+    fprint("You are in a dark cave. The entry has been sealed by fallen rocks. There is no way out.", 2)
+    print("Ahead, you can see a cavern. Will you continue?")
+    while True:
+        action = input("\n> ")
+        if action == "yes":
+            cavern()
+        elif action == "no":
+            fprint("A bat flies over your head and you hear screetches in the distance.")
+        else:
+            fprint("You sit in total darkness wondering if there's a way out.")
 
 
 def cavern():
