@@ -58,11 +58,7 @@ def entry():
     fprint("You are in a dark cave. The entry has been sealed by fallen rocks. There is no way out.", 2)
     print("Ahead, you can see a cavern. Will you continue?")
     print("Enter 'yes' or 'no' .")
-    medkit_find = random.choice([True,False])
-    if medkit_find == True:
-        medkit = True
-        fprint("You found a medkit!",2)
-        print("Enter 'm' to use it.")
+    check_medkit()
         handle_goblin()
     while True:
         action = input("\n> ")
@@ -158,5 +154,14 @@ def handle_goblin(self):
         goblin.move()
         if hero.location == goblin.location:
             goblin.talk()
+
+
+
+ def check_medkit(self):
+        medkit_find = random.choice([True, False])
+        if medkit_find is True:
+            hero.items.append("medkit")
+            game_functions.fprint("You found a medkit!", 2)
+            print("Enter 'm' to use it.")
 
             
