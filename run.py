@@ -57,14 +57,13 @@ def entry():
     print(f"\nHealth: {health}")
     fprint("You are in a dark cave. The entry has been sealed by fallen rocks. There is no way out.", 2)
     print("Ahead, you can see a cavern. Will you continue?")
+    print("Enter 'yes' or 'no' .")
     medkit_find = random.choice([True,False])
     if medkit_find == True:
         medkit = True
         fprint("You found a medkit!",2)
         print("Enter 'm' to use it.")
-        goblin.move()
-        if player["location"] == goblin.location:
-            goblin.talk()
+        handle_goblin()
     while True:
         action = input("\n> ")
         if action == "yes":
@@ -82,6 +81,7 @@ def cavern():
     print(f"\nHealth: {health}")
     fprint("You stumble into a dimly lit cavern", 2)
     print("You cannot go right or left but the cave continues ahead. Will you go on")
+    print("Enter 'yes' or 'no' .")
     bat_attack = random.choice([True,False])
     if bat_attack == True:
         fprint("You were attacked by a bat!",2)
@@ -90,6 +90,7 @@ def cavern():
         if health == 0:
             fprint("You are dead!")
             sys.exit()
+    handle_goblin()
     while True:
         action = input("\n> ")
         if action == "yes":
@@ -107,6 +108,8 @@ def hallway():
     print(f"\nHealth: {health}")
     fprint("You are in a wide hallway. It continues on indefinitely", 2)
     print("There's no turning back. Will you go on?")
+    print("Enter 'yes' or 'no' .")
+    handle_goblin()
     while True:
         action = input("\n> ")
         if action == "yes":
@@ -125,6 +128,8 @@ def pit():
     fprint("You fall head first into an ominous and languid pit.", 2)
     sprint("Luckly, you only landed on your back.", 2)
     print("You can try to climb out. Will you try?")
+    print("Enter 'yes' or 'no' .")
+    handle_goblin()
     while True:
         action = input("\n> ")
         if action == "yes":
