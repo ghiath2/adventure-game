@@ -45,7 +45,16 @@ def entry():
 
 
 def cavern():
-    pass
+     fprint("You stumble into a dimly lit cavern", 2)
+    print("You cannot go right or left but the cave continues ahead. Will you go on")
+    while True:
+        action = input("\n> ")
+        if action == "yes":
+            hallway()
+        elif action == "no":
+            fprint("You sit down and eat some food you brought with you.")
+        else:
+            fprint("You shiver from the cold.")
 
 
 def hallway():
