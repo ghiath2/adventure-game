@@ -1,6 +1,3 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
 import sys
 import os
 import random
@@ -32,6 +29,7 @@ class Game:
         time.sleep(delay)
 
 
+game_functions = Game()
 
 
 class player:
@@ -41,7 +39,6 @@ class player:
         self.items = items
 
 hero = player("entry", 100, [])
-
 
 
 class NPC:
@@ -60,89 +57,93 @@ class NPC:
 
 goblin = NPC("goblin", "hallway")
 
-class world:
-def entry(self):
-    hero.location = "entry"
-    print(f"\nHealth: {hero.health}")
-    fprint("You are in a dark cave. The entry has been sealed by fallen rocks. There is no way out.", 2)
-    print("Ahead, you can see a cavern. Will you continue?")
-    print("Enter 'yes' or 'no' .")
-    check_medkit()
-        handle_goblin()
-    while True:
-        action = input("\n> ")
-        if action == "yes":
-            cavern()
-        elif action == "no":
-            fprint("A bat flies over your head and you hear screetches in the distance.")
-        elif action == "m":
-        use_medkit()
-        else:
-            fprint("You sit in total darkness wondering if there's a way out.")
 
+class World:
 
-def cavern(self):
-    hero.location = "cavern"
-    print(f"\nHealth: {hero.health}")
-    fprint("You stumble into a dimly lit cavern", 2)
-    print("You cannot go right or left but the cave continues ahead. Will you go on")
-    print("Enter 'yes' or 'no' .")
-    check_bat_attack()
-    handle_goblin()
-    while True:
-        action = input("\n> ")
-        if action == "yes":
-            hallway()
-        elif action == "no":
-            fprint("You sit down and eat some food you brought with you.")
+    def entry(self):
+        hero.location = "entry"
+        print(f"\nHealth: {hero.health}")
+        game_functions.fprint("You are in a dark cave. The entry has been sealed by fallen rocks. There is no way out.", 2)
+        print("Ahead, you can see a cavern. Will you continue?")
+        print("Enter 'yes' or 'no'.")
+        self.check_medkit()
+        self.handle_goblin()
+        while True:
+            action = input("\n> ")
+            if action == "yes":
+                self.cavern()
+            elif action == "no":
+                game_functions.fprint(
+                    "A bat flies over your head and you hear screetches in the distance.")
             elif action == "m":
-            use_medkit()
-        else:
-            fprint("You shiver from the cold.")
+                self.use_medkit()
+            else:
+                game_functions.fprint("You sit in total darkness wondering if there's a way out.")
 
 
-def hallway(self):
-     hero.location = "hallway"
-    print(f"\nHealth: {hero.health}")
-    fprint("You are in a wide hallway. It continues on indefinitely", 2)
-    print("There's no turning back. Will you go on?")
-    print("Enter 'yes' or 'no' .")
-    handle_goblin()
-    while True:
-        action = input("\n> ")
-        if action == "yes":
-            pit()
-        elif action == "no":
-            fprint("You try to call your help but no one is there.")
+    def cavern(self):
+        hero.location = "cavern"
+        print(f"\nHealth: {hero.health}")
+        game_functions.fprint("You stumble into a dimly lit cavern.", 2)
+        print("You cannot go right or left but the cave continues ahead. Will you go on?")
+        print("Enter 'yes' or 'no'.")
+        self.check_bat_attack()
+        self.handle_goblin()
+        while True:
+            action = input("\n> ")
+            if action == "yes":
+                self.hallway()
+            elif action == "no":
+                game_functions.fprint("You sit down and eat some food you brought with you.")
             elif action == "m":
-            use_medkit()
-        else:
-            fprint("You wonder what time it is.")
+                self.use_medkit()
+            else:
+                game_functions.fprint("You shiver from the cold.")
 
 
-def pit(self):
-    hero.location = "pit"
-    print(f"\nHealth: {hero.health}")
-    fprint("You fall head first into an ominous and languid pit.", 2)
-    sprint("Luckly, you only landed on your back.", 2)
-    print("You can try to climb out. Will you try?")
-    print("Enter 'yes' or 'no' .")
-    handle_goblin()
-    while True:
-        action = input("\n> ")
-        if action == "yes":
-            fprint("You try to climb out but you slide off of the rocky wall and fall down again.", 2)
-            print("GAME OVER.")
-        elif action == "no":
-            fprint("You sit in utter darkness.")
+    def hallway(self):
+        hero.location = "hallway"
+        print(f"\nHealth: {hero.health}")
+        game_functions.fprint("You are in a wide hallway. It continues on indefinitely.", 2)
+        print("There's no turning back. Will you go on?")
+        print("Enter 'yes' or 'no'.")
+        self.handle_goblin()
+        while True:
+            action = input("\n> ")
+            if action == "yes":
+                self.pit()
+            elif action == "no":
+                game_functions.fprint("You try to call your help but no one is there.")
             elif action == "m":
-            use_medkit()
+                self.use_medkit()
+            else:
+                game_functions.fprint("You wonder what time it is.")
 
-        else:
-            fprint("You feel hopeless.")
+
+    def pit(self):
+        hero.location = "pit"
+        print(f"\nHealth: {hero.health}")
+        game_functions.fprint("You fall head first into an ominous and languid pit.", 2)
+        game_functions.sprint("Luckly, you only landed on your back.", 2)
+        print("You can try to climb out. Will you try?")
+        print("Enter 'yes' or 'no'.")
+        self.handle_goblin()
+        while True:
+            action = input("\n> ")
+            if action == "yes":
+                game_functions.fprint(
+                    "You try to climb out but you slide off of the rocky wall and fall down again.", 2)
+                print("GAME OVER.")
+                sys.exit()
+            elif action == "no":
+                game_functions.fprint("You sit in utter darkness.")
+            elif action == "m":
+                self.use_medkit()
+            else:
+                game_functions.fprint("You feel hopeless.")
 
 
-def use_medkit(self):
+    def use_medkit(self):
         if "medkit" in hero.items:
             hero.items.remove("medkit")
             game_functions.fprint("You used your medkit")
@@ -152,22 +153,21 @@ def use_medkit(self):
             game_functions.fprint("You don't have a medkit.")
 
 
-def handle_goblin(self):
+    def handle_goblin(self):
         goblin.move()
         if hero.location == goblin.location:
             goblin.talk()
 
 
-
- def check_medkit(self):
+    def check_medkit(self):
         medkit_find = random.choice([True, False])
         if medkit_find is True:
             hero.items.append("medkit")
             game_functions.fprint("You found a medkit!", 2)
             print("Enter 'm' to use it.")
 
-            
-def check_bat_attack(self):
+
+    def check_bat_attack(self):
         bat_attack = random.choice([True, False])
         if bat_attack is True:
             game_functions.fprint("You were attacked by a bat!", 2)
