@@ -36,6 +36,8 @@ health = 100
 
 
 def entry():
+    global health
+    print(f"\nHealth: {health}")
     fprint("You are in a dark cave. The entry has been sealed by fallen rocks. There is no way out.", 2)
     print("Ahead, you can see a cavern. Will you continue?")
     while True:
