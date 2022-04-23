@@ -60,8 +60,8 @@ class NPC:
 
 goblin = NPC("goblin", "hallway")
 
-
-def entry():
+class world:
+def entry(self):
     hero.location = "entry"
     print(f"\nHealth: {hero.health}")
     fprint("You are in a dark cave. The entry has been sealed by fallen rocks. There is no way out.", 2)
@@ -81,7 +81,7 @@ def entry():
             fprint("You sit in total darkness wondering if there's a way out.")
 
 
-def cavern():
+def cavern(self):
     hero.location = "cavern"
     print(f"\nHealth: {hero.health}")
     fprint("You stumble into a dimly lit cavern", 2)
@@ -101,7 +101,7 @@ def cavern():
             fprint("You shiver from the cold.")
 
 
-def hallway():
+def hallway(self):
      hero.location = "hallway"
     print(f"\nHealth: {hero.health}")
     fprint("You are in a wide hallway. It continues on indefinitely", 2)
@@ -120,7 +120,7 @@ def hallway():
             fprint("You wonder what time it is.")
 
 
-def pit():
+def pit(self):
     hero.location = "pit"
     print(f"\nHealth: {hero.health}")
     fprint("You fall head first into an ominous and languid pit.", 2)
@@ -176,3 +176,9 @@ def check_bat_attack(self):
             if hero.health == 0:
                 game_functions.fprint("You are dead!")
                 sys.exit()
+
+
+new_world = World()
+
+
+new_world.entry()
