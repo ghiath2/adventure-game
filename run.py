@@ -33,6 +33,7 @@ class Game:
 
 
 health = 100
+medkit = False
 
 
 def entry():
