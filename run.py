@@ -32,7 +32,16 @@ class Game:
         time.sleep(delay)
 
 
-player = {"location":"", "health":100, "items":[]}
+
+
+class player:
+    def __init__(self, location, health, items):
+        self.location = location
+        self.health = health
+        self.items = items
+
+hero = player("entry", 100, [])
+
 
 
 class NPC:
@@ -53,8 +62,8 @@ goblin = NPC("goblin", "hallway")
 
 
 def entry():
-    player["location" = "entry"]
-    print(f"\nHealth: {health}")
+    hero.location = "entry"
+    print(f"\nHealth: {hero.health}")
     fprint("You are in a dark cave. The entry has been sealed by fallen rocks. There is no way out.", 2)
     print("Ahead, you can see a cavern. Will you continue?")
     print("Enter 'yes' or 'no' .")
@@ -73,8 +82,8 @@ def entry():
 
 
 def cavern():
-    player["location" = "entry"]
-    print(f"\nHealth: {health}")
+    hero.location = "cavern"
+    print(f"\nHealth: {hero.health}")
     fprint("You stumble into a dimly lit cavern", 2)
     print("You cannot go right or left but the cave continues ahead. Will you go on")
     print("Enter 'yes' or 'no' .")
@@ -93,8 +102,8 @@ def cavern():
 
 
 def hallway():
-    player["location" = "entry"]
-    print(f"\nHealth: {health}")
+     hero.location = "hallway"
+    print(f"\nHealth: {hero.health}")
     fprint("You are in a wide hallway. It continues on indefinitely", 2)
     print("There's no turning back. Will you go on?")
     print("Enter 'yes' or 'no' .")
@@ -112,8 +121,8 @@ def hallway():
 
 
 def pit():
-    player["location" = "entry"]
-    print(f"\nHealth: {health}")
+    hero.location = "pit"
+    print(f"\nHealth: {hero.health}")
     fprint("You fall head first into an ominous and languid pit.", 2)
     sprint("Luckly, you only landed on your back.", 2)
     print("You can try to climb out. Will you try?")
