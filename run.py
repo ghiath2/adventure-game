@@ -39,14 +39,14 @@ medkit = False
 def entry():
     global health
     global medkit
+    print(f"\nHealth: {health}")
+    fprint("You are in a dark cave. The entry has been sealed by fallen rocks. There is no way out.", 2)
+    print("Ahead, you can see a cavern. Will you continue?")
     medkit_find = random.choice([True,False])
     if medkit_find == True:
         medkit = True
         fprint("You found a medkit!",2)
         print("Enter 'm' to use it.")
-    print(f"\nHealth: {health}")
-    fprint("You are in a dark cave. The entry has been sealed by fallen rocks. There is no way out.", 2)
-    print("Ahead, you can see a cavern. Will you continue?")
     while True:
         action = input("\n> ")
         if action == "yes":
@@ -66,6 +66,8 @@ def cavern():
     global health
     global medkit
     print(f"\nHealth: {health}")
+    fprint("You stumble into a dimly lit cavern", 2)
+    print("You cannot go right or left but the cave continues ahead. Will you go on")
     bat_attack = random.choice([True,False])
     if bat_attack == True:
         fprint("You were attacked by a bat!",2)
@@ -74,9 +76,6 @@ def cavern():
         if health == 0:
             fprint("You are dead!")
             sys.exit()
-
-    fprint("You stumble into a dimly lit cavern", 2)
-    print("You cannot go right or left but the cave continues ahead. Will you go on")
     while True:
         action = input("\n> ")
         if action == "yes":
