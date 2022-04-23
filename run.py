@@ -38,6 +38,12 @@ medkit = False
 
 def entry():
     global health
+    global medkit
+    medkit_find = random.choice([True,False])
+    if medkit_find == True:
+        medkit = True
+        fprint("You found a medkit!",2)
+        print("Enter 'm' to use it.")
     print(f"\nHealth: {health}")
     fprint("You are in a dark cave. The entry has been sealed by fallen rocks. There is no way out.", 2)
     print("Ahead, you can see a cavern. Will you continue?")
@@ -47,12 +53,17 @@ def entry():
             cavern()
         elif action == "no":
             fprint("A bat flies over your head and you hear screetches in the distance.")
+        elif action == "m":
+            medkit = False
+            fprint("You used your medkit")
+            health = 100
         else:
             fprint("You sit in total darkness wondering if there's a way out.")
 
 
 def cavern():
     global health
+    global medkit
     print(f"\nHealth: {health}")
     bat_attack = random.choice([True,False])
     if bat_attack == True:
@@ -70,12 +81,17 @@ def cavern():
             hallway()
         elif action == "no":
             fprint("You sit down and eat some food you brought with you.")
+            elif action == "m":
+            medkit = False
+            fprint("You used your medkit")
+            health = 100
         else:
             fprint("You shiver from the cold.")
 
 
 def hallway():
     global health
+    global medkit
     print(f"\nHealth: {health}")
     fprint("You are in a wide hallway. It continues on indefinitely", 2)
     print("There's no turning back. Will you go on?")
@@ -85,12 +101,17 @@ def hallway():
             pit()
         elif action == "no":
             fprint("You try to call your help but no one is there.")
+            elif action == "m":
+            medkit = False
+            fprint("You used your medkit")
+            health = 100
         else:
             fprint("You wonder what time it is.")
 
 
 def pit():
     global health
+    global medkit
     print(f"\nHealth: {health}")
     fprint("You fall head first into an ominous and languid pit.", 2)
     sprint("Luckly, you only landed on your back.", 2)
@@ -102,6 +123,10 @@ def pit():
             print("GAME OVER.")
         elif action == "no":
             fprint("You sit in utter darkness.")
+            elif action == "m":
+            medkit = False
+            fprint("You used your medkit")
+            health = 100
         else:
             fprint("You feel hopeless.")
 
