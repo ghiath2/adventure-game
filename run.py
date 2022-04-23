@@ -52,6 +52,7 @@ def entry():
 
 def cavern():
     global health
+    print(f"\nHealth: {health}")
     bat_attack = random.choice([True,False])
     if bat_attack == True:
         fprint("You were attacked by a bat!",2)
@@ -73,6 +74,8 @@ def cavern():
 
 
 def hallway():
+    global health
+    print(f"\nHealth: {health}")
     fprint("You are in a wide hallway. It continues on indefinitely", 2)
     print("There's no turning back. Will you go on?")
     while True:
@@ -86,6 +89,8 @@ def hallway():
 
 
 def pit():
+    global health
+    print(f"\nHealth: {health}")
     fprint("You fall head first into an ominous and languid pit.", 2)
     sprint("Luckly, you only landed on your back.", 2)
     print("You can try to climb out. Will you try?")
