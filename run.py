@@ -53,8 +53,7 @@ goblin = NPC("goblin", "hallway")
 
 
 def entry():
-    global health
-    global medkit
+    player["location" = "entry"]
     print(f"\nHealth: {health}")
     fprint("You are in a dark cave. The entry has been sealed by fallen rocks. There is no way out.", 2)
     print("Ahead, you can see a cavern. Will you continue?")
@@ -63,6 +62,9 @@ def entry():
         medkit = True
         fprint("You found a medkit!",2)
         print("Enter 'm' to use it.")
+        goblin.move()
+        if player["location"] == goblin.location:
+            goblin.talk()
     while True:
         action = input("\n> ")
         if action == "yes":
@@ -70,17 +72,13 @@ def entry():
         elif action == "no":
             fprint("A bat flies over your head and you hear screetches in the distance.")
         elif action == "m":
-            medkit = False
-            fprint("You used your medkit")
-            health = 100
-            print(f"\nHealth: {health}")
+        use_medkit()
         else:
             fprint("You sit in total darkness wondering if there's a way out.")
 
 
 def cavern():
-    global health
-    global medkit
+    player["location" = "entry"]
     print(f"\nHealth: {health}")
     fprint("You stumble into a dimly lit cavern", 2)
     print("You cannot go right or left but the cave continues ahead. Will you go on")
@@ -99,16 +97,13 @@ def cavern():
         elif action == "no":
             fprint("You sit down and eat some food you brought with you.")
             elif action == "m":
-            medkit = False
-            fprint("You used your medkit")
-            health = 100
+            use_medkit()
         else:
             fprint("You shiver from the cold.")
 
 
 def hallway():
-    global health
-    global medkit
+    player["location" = "entry"]
     print(f"\nHealth: {health}")
     fprint("You are in a wide hallway. It continues on indefinitely", 2)
     print("There's no turning back. Will you go on?")
@@ -119,16 +114,13 @@ def hallway():
         elif action == "no":
             fprint("You try to call your help but no one is there.")
             elif action == "m":
-            medkit = False
-            fprint("You used your medkit")
-            health = 100
+            use_medkit()
         else:
             fprint("You wonder what time it is.")
 
 
 def pit():
-    global health
-    global medkit
+    player["location" = "entry"]
     print(f"\nHealth: {health}")
     fprint("You fall head first into an ominous and languid pit.", 2)
     sprint("Luckly, you only landed on your back.", 2)
@@ -141,10 +133,19 @@ def pit():
         elif action == "no":
             fprint("You sit in utter darkness.")
             elif action == "m":
-            medkit = False
-            fprint("You used your medkit.")
-            health = 100
+            use_medkit()
+
         else:
             fprint("You feel hopeless.")
+
+
+def use_medkit(self):
+        if "medkit" in hero.items:
+            hero.items.remove("medkit")
+            game_functions.fprint("You used your medkit")
+            hero.health = 100
+            print(f"\nHealth: {hero.health}")
+        else:
+            game_functions.fprint("You don't have a medkit.")
 
             
