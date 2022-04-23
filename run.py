@@ -148,4 +148,10 @@ def use_medkit(self):
         else:
             game_functions.fprint("You don't have a medkit.")
 
+
+def handle_goblin(self):
+        goblin.move()
+        if hero.location == goblin.location:
+            goblin.talk()
+
             
