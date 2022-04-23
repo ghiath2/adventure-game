@@ -31,6 +31,10 @@ class Game:
         print(str)
         time.sleep(delay)
 
+
+health = 100
+
+
 def entry():
     fprint("You are in a dark cave. The entry has been sealed by fallen rocks. There is no way out.", 2)
     print("Ahead, you can see a cavern. Will you continue?")
@@ -45,7 +49,16 @@ def entry():
 
 
 def cavern():
-     fprint("You stumble into a dimly lit cavern", 2)
+    global health
+    bat_attack = random.choice([True,False])
+    if bat_attack == True:
+        fprint("You were attacked by a bat!",2)
+        health -= random.randint(1,100)
+        if health == 0:
+            fprint("You are dead!")
+            sys.exit()
+
+    fprint("You stumble into a dimly lit cavern", 2)
     print("You cannot go right or left but the cave continues ahead. Will you go on")
     while True:
         action = input("\n> ")
@@ -84,4 +97,4 @@ def pit():
         else:
             fprint("You feel hopeless.")
 
-entry()
+            
