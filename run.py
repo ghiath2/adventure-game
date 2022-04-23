@@ -31,3 +31,17 @@ class Game:
         print(str)
         time.sleep(delay)
 
+def entry():
+    pass
+
+
+def cavern():
+    pass
+
+
+def hallway():
+    pass
+
+
+def pit():
+    pass
