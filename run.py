@@ -58,8 +58,30 @@ def cavern():
 
 
 def hallway():
-    pass
+    fprint("You are in a wide hallway. It continues on indefinitely", 2)
+    print("There's no turning back. Will you go on?")
+    while True:
+        action = input("\n> ")
+        if action == "yes":
+            pit()
+        elif action == "no":
+            fprint("You try to call your help but no one is there.")
+        else:
+            fprint("You wonder what time it is.")
 
 
 def pit():
-    pass
+    fprint("You fall head first into an ominous and languid pit.", 2)
+    sprint("Luckly, you only landed on your back.", 2)
+    print("You can try to climb out. Will you try?")
+    while True:
+        action = input("\n> ")
+        if action == "yes":
+            fprint("You try to climb out but you slide off of the rocky wall and fall down again.", 2)
+            print("GAME OVER.")
+        elif action == "no":
+            fprint("You sit in utter darkness.")
+        else:
+            fprint("You feel hopeless.")
+
+entry()
