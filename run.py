@@ -35,6 +35,23 @@ class Game:
 player = {"location":"", "health":100, "items":[]}
 
 
+class NPC:
+    def __init__(self, name, location):
+        self.name = name
+        self.location = location
+
+    def talk(self):
+        game_functions.fprint(f"A {self.name} emerges from the shadows.")
+        game_functions.fprint("'Hisssss! Stay away from me!'")
+
+    def move(self):
+        available_locations = ["entry", "cavern", "hallway", "pit"]
+        self.location = random.choice(available_locations)
+
+
+goblin = NPC("goblin", "hallway")
+
+
 def entry():
     global health
     global medkit
