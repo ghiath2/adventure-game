@@ -57,6 +57,7 @@ def entry():
             medkit = False
             fprint("You used your medkit")
             health = 100
+            print(f"\nHealth: {health}")
         else:
             fprint("You sit in total darkness wondering if there's a way out.")
 
@@ -69,6 +70,7 @@ def cavern():
     if bat_attack == True:
         fprint("You were attacked by a bat!",2)
         health -= random.randint(1,100)
+        print(f"\nHealth: {health}")
         if health == 0:
             fprint("You are dead!")
             sys.exit()
@@ -125,7 +127,7 @@ def pit():
             fprint("You sit in utter darkness.")
             elif action == "m":
             medkit = False
-            fprint("You used your medkit")
+            fprint("You used your medkit.")
             health = 100
         else:
             fprint("You feel hopeless.")
