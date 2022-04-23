@@ -78,14 +78,7 @@ def cavern():
     fprint("You stumble into a dimly lit cavern", 2)
     print("You cannot go right or left but the cave continues ahead. Will you go on")
     print("Enter 'yes' or 'no' .")
-    bat_attack = random.choice([True,False])
-    if bat_attack == True:
-        fprint("You were attacked by a bat!",2)
-        health -= random.randint(1,100)
-        print(f"\nHealth: {health}")
-        if health == 0:
-            fprint("You are dead!")
-            sys.exit()
+    check_bat_attack()
     handle_goblin()
     while True:
         action = input("\n> ")
@@ -165,3 +158,12 @@ def handle_goblin(self):
             print("Enter 'm' to use it.")
 
             
+def check_bat_attack(self):
+        bat_attack = random.choice([True, False])
+        if bat_attack is True:
+            game_functions.fprint("You were attacked by a bat!", 2)
+            hero.health -= random.randint(1, 100)
+            print(f"\nHealth: {hero.health}")
+            if hero.health == 0:
+                game_functions.fprint("You are dead!")
+                sys.exit()
