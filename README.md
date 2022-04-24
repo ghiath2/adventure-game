@@ -2,11 +2,11 @@
 
 ***Thrill And adventure Game***
 
-[View deployed site here](https://ghiath2.github.io/Mosaic-Gifts/)
+[View deployed site here](https://cave-adventure-game.herokuapp.com/)
 
 In this game, you will have an adventure in the world of horror.  You will have the opportunity to determine your destiny and choose between several options in a distinctive interactive way
 
-![The website on different devices](/assets/documentation/responsive.png)
+![The website on different devices](/docs/responsive.png)
 
 # How to play
 The user can play this game by choosing between several different paths. Each path has its own destiny and risks. The game also allows the user to revive health to add more excitement
@@ -15,13 +15,10 @@ The user can play this game by choosing between several different paths. Each pa
    - ***The entry***
 
    It puts you in the atmosphere of the game by describing the place around you and presenting the different paths.
-     ![Navigation bar](/assets/documentation/navigation-bar.png)
- 
+    
    - ***The cavern***
 
      The second stage of the game with more horror, adventure and suspense, where you may be attacked by strange creatures.
-
-     ![Navigation bar](/assets/documentation/homepage-image.png)
 
    - ***The Hallway***
 
@@ -72,10 +69,18 @@ I have tested this project by doing the following:
 Currently no known bugs.
 
 # Deployment
-- The site was deployed to GitHub pages. The steps to deploy are as follows:
-  - In the GitHub repository, navigate to the Settings tab
-  - From the source section drop-down menu, select the Master Branch
-  - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+1. Fork or clone this repository.
+2. requirements.txt can be left empty as this project does not use any external libraries.
+3. Create a new app in Heroku.
+4. Select "New" and "Create new app".
+5. Name the new app and click "Create new app".
+6. In "Settings" select "BuildPack" and select Python and Node.js.
+7. Whilst still in "Settings", click "Reveal Config Vars" and input the folloing. KEY: PORT, VALUE: 8000. Nothing else is needed here as this project does not have any sensitive files.
+8. Click on "Deploy" and select your deploy method and repository.
+9. Click "Connect" on selected repository.
+10. choose "Deploy Branch" in the manual deploy section.
+11. you can choose "Enable Automatic Deploys" if you want.
+12. Heroku will now deploy the site.
 
 The live link can be found here  [MOSAIC GIFTS](https://ghiath2.github.io/Mosaic-Gifts/)
 
