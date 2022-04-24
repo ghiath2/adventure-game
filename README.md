@@ -1,6 +1,6 @@
 # ADVENTURE GAME
 
-*** Thrill And adventure Game ***
+***Thrill And adventure Game***
 
 [View deployed site here](https://ghiath2.github.io/Mosaic-Gifts/)
 
@@ -31,11 +31,6 @@ The user can play this game by choosing between several different paths. Each pa
 
    The last stage where your fate will be determined.
 
-
-     This section will allow the user to contact us and order their gifts.
-
-    
-
 # Future features
 - More levels
 
@@ -47,12 +42,12 @@ The user can play this game by choosing between several different paths. Each pa
 # Ideal clients
 ***The ideal client***
 - Partners
-- Frinds
+- Friends
 - Family
 - Everyone who wants to spend good time playing games
 
  ***Client stories***
-1. As a new user to the website, I found this game fun and exciting
+1. As a new user to the game, I found this it fun and exciting
 2. This game is very easy to play 
 3. Beautifully terrifying
 
@@ -61,7 +56,7 @@ The user can play this game by choosing between several different paths. Each pa
 I have tested this project by doing the following:
 - Passed the code through a PEP8 linter and it showed a few errors as shown in the following pictures:
 
-![PEP8](/docs/pep8-1.png)
+![PEP8](/docs/pep8.png)
 
 ![PEP8](/docs/pep8-1.png)
 
