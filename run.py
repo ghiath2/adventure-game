@@ -13,16 +13,13 @@ class Game:
             time.sleep(delay)
         print("\n")
 
-
     def reset_console(self):
         print("\n")
         os.system('cls||clear')
 
-
     def fprint(self, str, delay=0):
         print("\n" + str)
         time.sleep(delay)
-
 
     def sprint(self, str, delay=0):
         print(str)
@@ -38,10 +35,12 @@ class player:
         self.health = health
         self.items = items
 
+
 hero = player("entry", 100, [])
 
 
 class NPC:
+
     def __init__(self, name, location):
         self.name = name
         self.location = location
@@ -63,7 +62,10 @@ class World:
     def entry(self):
         hero.location = "entry"
         print(f"\nHealth: {hero.health}")
-        game_functions.fprint("You are in a dark cave. The entry has been sealed by fallen rocks. There is no way out.", 2)
+        game_functions.fprint(
+            "You are in a dark cave." +
+            "The entry has been sealed by fallen rocks." +
+            "There is no way out.", 2)
         print("Ahead, you can see a cavern. Will you continue?")
         print("Enter 'yes' or 'no'.")
         self.check_medkit()
@@ -74,18 +76,22 @@ class World:
                 self.cavern()
             elif action == "no":
                 game_functions.fprint(
-                    "A bat flies over your head and you hear screetches in the distance.")
+                    "A bat flies over your head and" +
+                    "you hear screetches in the distance.")
             elif action == "m":
                 self.use_medkit()
             else:
-                game_functions.fprint("You sit in total darkness wondering if there's a way out.")
-
+                game_functions.fprint(
+                    "You sit in total darkness" +
+                    "wondering if there's a way out.")
 
     def cavern(self):
         hero.location = "cavern"
         print(f"\nHealth: {hero.health}")
         game_functions.fprint("You stumble into a dimly lit cavern.", 2)
-        print("You cannot go right or left but the cave continues ahead. Will you go on?")
+        print(
+            "You cannot go right or left but" +
+            " the cave continues ahead. Will you go on?")
         print("Enter 'yes' or 'no'.")
         self.check_bat_attack()
         self.handle_goblin()
@@ -94,17 +100,20 @@ class World:
             if action == "yes":
                 self.hallway()
             elif action == "no":
-                game_functions.fprint("You sit down and eat some food you brought with you.")
+                game_functions.fprint(
+                    "You sit down and eat some" +
+                    "food you brought with you.")
             elif action == "m":
                 self.use_medkit()
             else:
                 game_functions.fprint("You shiver from the cold.")
 
-
     def hallway(self):
         hero.location = "hallway"
         print(f"\nHealth: {hero.health}")
-        game_functions.fprint("You are in a wide hallway. It continues on indefinitely.", 2)
+        game_functions.fprint(
+            "You are in a wide hallway." +
+            " It continues on indefinitely.", 2)
         print("There's no turning back. Will you go on?")
         print("Enter 'yes' or 'no'.")
         self.handle_goblin()
@@ -113,17 +122,20 @@ class World:
             if action == "yes":
                 self.pit()
             elif action == "no":
-                game_functions.fprint("You try to call your help but no one is there.")
+                game_functions.fprint(
+                    "You try to call your help" +
+                    "but no one is there.")
             elif action == "m":
                 self.use_medkit()
             else:
                 game_functions.fprint("You wonder what time it is.")
 
-
     def pit(self):
         hero.location = "pit"
         print(f"\nHealth: {hero.health}")
-        game_functions.fprint("You fall head first into an ominous and languid pit.", 2)
+        game_functions.fprint(
+            "You fall head first into" +
+            "an ominous and languid pit.", 2)
         game_functions.sprint("Luckly, you only landed on your back.", 2)
         print("You can try to climb out. Will you try?")
         print("Enter 'yes' or 'no'.")
@@ -132,7 +144,8 @@ class World:
             action = input("\n> ")
             if action == "yes":
                 game_functions.fprint(
-                    "You try to climb out but you slide off of the rocky wall and fall down again.", 2)
+                    "You try to climb out but you slide off of" +
+                    "the rocky wall and fall down again.", 2)
                 print("GAME OVER.")
                 sys.exit()
             elif action == "no":
@@ -141,7 +154,6 @@ class World:
                 self.use_medkit()
             else:
                 game_functions.fprint("You feel hopeless.")
-
 
     def use_medkit(self):
         if "medkit" in hero.items:
@@ -152,12 +164,10 @@ class World:
         else:
             game_functions.fprint("You don't have a medkit.")
 
-
     def handle_goblin(self):
         goblin.move()
         if hero.location == goblin.location:
             goblin.talk()
-
 
     def check_medkit(self):
         medkit_find = random.choice([True, False])
@@ -165,7 +175,6 @@ class World:
             hero.items.append("medkit")
             game_functions.fprint("You found a medkit!", 2)
             print("Enter 'm' to use it.")
-
 
     def check_bat_attack(self):
         bat_attack = random.choice([True, False])
