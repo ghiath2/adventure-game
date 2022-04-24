@@ -24,9 +24,9 @@ The user can play this game by choosing between several different paths. Each pa
 
      More excitment at this point and worry about not being sure of your options.
 
-  - ***The Hallway***
+  - ***The pit***
 
-   The last stage where your fate will be determined.
+    The last stage where your fate will be determined.
 
 # Future features
 - More levels
@@ -35,8 +35,6 @@ The user can play this game by choosing between several different paths. Each pa
 
 - Add more kits
 
-
-# Ideal clients
 ***The ideal client***
 - Partners
 - Friends
@@ -44,7 +42,7 @@ The user can play this game by choosing between several different paths. Each pa
 - Everyone who wants to spend good time playing games
 
  ***Client stories***
-1. As a new user to the game, I found this it fun and exciting
+1. As a new user to the game, I found it fun and exciting
 2. This game is very easy to play 
 3. Beautifully terrifying
 
