@@ -14,7 +14,7 @@ The user can play this game by choosing between several different paths. Each pa
 # Existing features
    - ***The entry***
 
-   It puts you in the atmosphere of the game by describing the place around you and presenting the different paths.
+     It puts you in the atmosphere of the game by describing the place around you and presenting the different paths.
     
    - ***The cavern***
 
@@ -22,9 +22,9 @@ The user can play this game by choosing between several different paths. Each pa
 
    - ***The Hallway***
 
-   More excitment at this point and worry about not being sure of your options.
+     More excitment at this point and worry about not being sure of your options.
 
-   - ***The Hallway***
+  - ***The Hallway***
 
    The last stage where your fate will be determined.
 
@@ -82,7 +82,7 @@ Currently no known bugs.
 11. you can choose "Enable Automatic Deploys" if you want.
 12. Heroku will now deploy the site.
 
-The live link can be found here  [MOSAIC GIFTS](https://ghiath2.github.io/Mosaic-Gifts/)
+The live link can be found here  [ADVENTURE GAME](https://cave-adventure-game.herokuapp.com/)
 
 # Technologies
 1. Python
