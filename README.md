@@ -1,31 +1,97 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# ADVENTURE GAME
 
-Welcome ghiath2,
+*** Thrill And adventure Game ***
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+[View deployed site here](https://ghiath2.github.io/Mosaic-Gifts/)
 
-## Reminders
+In this game, you will have an adventure in the world of horror.  You will have the opportunity to determine your destiny and choose between several options in a distinctive interactive way
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+![The website on different devices](/assets/documentation/responsive.png)
 
-## Creating the Heroku app
+# How to play
+The user can play this game by choosing between several different paths. Each path has its own destiny and risks. The game also allows the user to revive health to add more excitement
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+# Existing features
+   - ***The entry***
 
-1. `heroku/python`
-2. `heroku/nodejs`
+   It puts you in the atmosphere of the game by describing the place around you and presenting the different paths.
+     ![Navigation bar](/assets/documentation/navigation-bar.png)
+ 
+   - ***The cavern***
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+     The second stage of the game with more horror, adventure and suspense, where you may be attacked by strange creatures.
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+     ![Navigation bar](/assets/documentation/homepage-image.png)
 
-Connect your GitHub repository and deploy as normal.
+   - ***The Hallway***
 
-## Constraints
+   More excitment at this point and worry about not being sure of your options.
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+   - ***The Hallway***
 
------
-Happy coding!
+   The last stage where your fate will be determined.
+
+
+     This section will allow the user to contact us and order their gifts.
+
+    
+
+# Future features
+- More levels
+
+- Add sounds 
+
+- Add more kits
+
+
+# Ideal clients
+***The ideal client***
+- Partners
+- Frinds
+- Family
+- Everyone who wants to spend good time playing games
+
+ ***Client stories***
+1. As a new user to the website, I found this game fun and exciting
+2. This game is very easy to play 
+3. Beautifully terrifying
+
+# Testing
+
+I have tested this project by doing the following:
+- Passed the code through a PEP8 linter and it showed a few errors as shown in the following pictures:
+
+![PEP8](/docs/pep8-1.png)
+
+![PEP8](/docs/pep8-1.png)
+
+- I fixed the  errors by deleting blank lines and breaking up long lines 
+
+- confirmed there are no problems after fixing the errors
+
+![PEP8](/docs/pep8-2.png)
+
+
+# Bugs
+
+Currently no known bugs.
+
+# Deployment
+- The site was deployed to GitHub pages. The steps to deploy are as follows:
+  - In the GitHub repository, navigate to the Settings tab
+  - From the source section drop-down menu, select the Master Branch
+  - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+
+The live link can be found here  [MOSAIC GIFTS](https://ghiath2.github.io/Mosaic-Gifts/)
+
+# Technologies
+1. Python
+2. GitHub - Used to host repository
+3. Gitpod.io - for writing the code. Using the command line for committing and pushing to Git Hub
+4. GIT - for version control of the project.
+5. Heroku
+
+# Credits
+
+-  [ W3School](https://www.w3schools.com/default.asp)
+- Youtube tutorials
