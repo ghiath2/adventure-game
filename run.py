@@ -1,11 +1,14 @@
-import sys
+"""
+Imported libraries supporting the application
+"""
+import sys  # To provide the user with an exit from the ordering system
 import os
-import random
-import time
+import random  # To create sequential order references
+import time  # To add a pause between certain functions executing
 
 
 class Game:
-
+    # define function to slow down
     def print_slow(self, str, delay=0.1):
         for letter in str:
             sys.stdout.write(letter)
@@ -13,14 +16,17 @@ class Game:
             time.sleep(delay)
         print("\n")
 
+    # define function to reset the console
     def reset_console(self):
         print("\n")
         os.system('cls||clear')
 
+    # define function to print in a different way
     def fprint(self, str, delay=0):
         print("\n" + str)
         time.sleep(delay)
 
+    # define function to print in a different way
     def sprint(self, str, delay=0):
         print(str)
         time.sleep(delay)
@@ -60,7 +66,13 @@ goblin = NPC("goblin", "hallway")
 class World:
 
     def entry(self):
+        """
+        Function will show the situation and give
+        multiple choices and ask the player if they wish
+        to continue or not
+        """
         hero.location = "entry"
+        #  Shows the health
         print(f"\nHealth: {hero.health}")
         game_functions.fprint(
             "You are in a dark cave." +
@@ -75,10 +87,12 @@ class World:
             if action == "yes":
                 self.cavern()
             elif action == "no":
+                #  Appears when no is chosen
                 game_functions.fprint(
                     "A bat flies over your head and" +
                     "you hear screetches in the distance.")
             elif action == "m":
+                #  Gives a choice to use med kit
                 self.use_medkit()
             else:
                 game_functions.fprint(
@@ -86,6 +100,11 @@ class World:
                     "wondering if there's a way out.")
 
     def cavern(self):
+        """
+        Function will show the next level and give
+        multiple choices and ask the player if they wish
+        to continue or not
+        """
         hero.location = "cavern"
         print(f"\nHealth: {hero.health}")
         game_functions.fprint("You stumble into a dimly lit cavern.", 2)
@@ -93,6 +112,7 @@ class World:
             "You cannot go right or left but" +
             " the cave continues ahead. Will you go on?")
         print("Enter 'yes' or 'no'.")
+        #  Shows when ansewr is no
         self.check_bat_attack()
         self.handle_goblin()
         while True:
@@ -104,11 +124,17 @@ class World:
                     "You sit down and eat some" +
                     "food you brought with you.")
             elif action == "m":
+                #  Asks to use midkit
                 self.use_medkit()
             else:
                 game_functions.fprint("You shiver from the cold.")
 
     def hallway(self):
+        """
+        Function will show the next level and give
+        multiple choices and ask the player if they wish
+        to continue or not
+        """
         hero.location = "hallway"
         print(f"\nHealth: {hero.health}")
         game_functions.fprint(
@@ -122,15 +148,22 @@ class World:
             if action == "yes":
                 self.pit()
             elif action == "no":
+                # when answer is no
                 game_functions.fprint(
                     "You try to call your help" +
                     "but no one is there.")
             elif action == "m":
+                #  Asks to use midkit
                 self.use_medkit()
             else:
                 game_functions.fprint("You wonder what time it is.")
 
     def pit(self):
+        """
+        Function will show the next level and give
+        multiple choices and ask the player if they wish
+        to continue or not
+        """
         hero.location = "pit"
         print(f"\nHealth: {hero.health}")
         game_functions.fprint(
@@ -142,6 +175,7 @@ class World:
         self.handle_goblin()
         while True:
             action = input("\n> ")
+            #  if yes print game over
             if action == "yes":
                 game_functions.fprint(
                     "You try to climb out but you slide off of" +
@@ -156,6 +190,10 @@ class World:
                 game_functions.fprint("You feel hopeless.")
 
     def use_medkit(self):
+        """
+        Function will show the midkit choice randomly
+        when use it will refresh the health
+        """
         if "medkit" in hero.items:
             hero.items.remove("medkit")
             game_functions.fprint("You used your medkit")
@@ -169,6 +207,7 @@ class World:
         if hero.location == goblin.location:
             goblin.talk()
 
+    #  shows the midkit messege randomly
     def check_medkit(self):
         medkit_find = random.choice([True, False])
         if medkit_find is True:
